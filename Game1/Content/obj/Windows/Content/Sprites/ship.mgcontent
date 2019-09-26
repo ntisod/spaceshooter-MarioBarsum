@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/GitHub/spaceshooter-MarioBarsum/Game1/Content/Sprites/ship.png</SourceFile>
-  <SourceTime>2019-09-20T13:04:13.3129458+02:00</SourceTime>
+  <SourceTime>2019-09-26T15:11:51.699619+02:00</SourceTime>
   <DestFile>C:/GitHub/spaceshooter-MarioBarsum/Game1/Content/bin/Windows/Content/Sprites/ship.xnb</DestFile>
-  <DestTime>2019-09-20T13:52:45.3871823+02:00</DestTime>
+  <DestTime>2019-09-26T15:12:47.9077812+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T17:35:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

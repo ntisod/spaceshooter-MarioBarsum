@@ -85,10 +85,11 @@ namespace SpaceShooter
             // TODO: Add your update logic here
 
             // tangent 
-
+            
             KeyboardState keyboardState = Keyboard.GetState();
 
-            if(keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D));
+            //TL20190926 Du har ett semikolon för mycket på nästa rad. Du ska inte ha semikolon mitt i en if-sats.
+            if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D));
             {
                 ship_vector.X += ship_speed.X;
             }
@@ -107,7 +108,7 @@ namespace SpaceShooter
             {
                 ship_vector.Y += ship_speed.Y;
             }
-
+            
 
             /*
             //skeppets förflyttning
