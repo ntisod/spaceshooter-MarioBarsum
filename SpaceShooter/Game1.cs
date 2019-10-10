@@ -77,9 +77,11 @@ namespace SpaceShooter
 
             // TODO: Add your update logic here
 
+            player.Update(Window);
+
             // tangent 
 
-           
+             
             /* 
             //skeppets förflyttning
             ship_vector.X += ship_speed.X;
@@ -114,7 +116,7 @@ namespace SpaceShooter
             spriteBatch.Begin();
 
             //player.draw(spriteBatch);
-            spriteBatch.Draw(Color.White);
+            player.Draw(spriteBatch);
 
             spriteBatch.End();
 

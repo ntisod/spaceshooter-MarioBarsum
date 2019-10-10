@@ -4,8 +4,11 @@ using Microsoft.Xna.Framework.Input;
 
 namespace SpaceShooter
 {
-    class Player
+    class Player : MovingObject
+
     {
+        int points = 0;
+
         Texture2D texture;
         Vector2 position;
         Vector2 speed;
@@ -31,7 +34,7 @@ namespace SpaceShooter
 
             if (keyboardState.IsKeyDown(Keys.Left) || keyboardState.IsKeyDown(Keys.A))
             {
-                position.X -= position.X;
+                position.X -= speed.X;
             }
 
             if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
@@ -44,6 +47,11 @@ namespace SpaceShooter
             {
                 position.Y += speed.Y;
             }
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(texture, position, Color.White);
         }
     }   
 }
