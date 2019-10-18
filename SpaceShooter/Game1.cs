@@ -1,6 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SpaceShooter
 {
@@ -16,6 +19,10 @@ namespace SpaceShooter
         SpriteBatch spriteBatch;
 
         Player player;
+
+        List<Enemy> enemies;
+
+        PrintText printText;
 
         // mina variabler:
 
@@ -47,12 +54,25 @@ namespace SpaceShooter
         /// </summary>
         protected override void LoadContent()
         {
+            printText = new PrintText(Content.Load<SpriteFont>("myFont"));
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
             player = new Player(Content.Load<Texture2D>("Sprites/ship"), 380, 400, 2.5f, 4.5f);
-                      
+
+            // skapa fiender
+            enemies = new List<Enemy>();
+            Random random = new Random();
+            Texture2D tmpSprite = Content.Load<Texture2D>("sprites/mine");
+            for (int i = 0; i < 10; i++)
+            {
+                int rndX = random.Next(0, Window.ClientBounds.Width - tmpSprite.Width);
+                int rndY = random.Next(0, Window.ClientBounds.Height/2);
+                Enemy temp = new Enemy(tmpSprite, rndX, rndY);
+                enemies.Add(temp); // lägg till i listan
+            }
+
 
         }
 
@@ -78,6 +98,9 @@ namespace SpaceShooter
             // TODO: Add your update logic here
 
             player.Update(Window);
+
+            foreach (Enemy e in enemies)
+                e.Update(Window);
 
             // tangent 
 
@@ -115,8 +138,17 @@ namespace SpaceShooter
 
             spriteBatch.Begin();
 
+            printText.print("Antal fiender" + enemies.Count, spriteBatch, 0, 0);
             //player.draw(spriteBatch);
             player.Draw(spriteBatch);
+
+            foreach (Enemy e in enemies.ToList())
+            {
+                if (e.IsAlive)
+                    e.Update(Window);
+                else
+                    enemies.Remove(e);
+            }
 
             spriteBatch.End();
 

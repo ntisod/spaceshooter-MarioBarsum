@@ -9,17 +9,9 @@ namespace SpaceShooter
     {
         int points = 0;
 
-        Texture2D texture;
-        Vector2 position;
-        Vector2 speed;
 
         public Player(Texture2D texture, float X, float Y, float speedX, float speedY) : base(texture, X, Y, speedX, speedY)
         {
-            this.texture = texture;
-            this.position.X = X;
-            this.position.Y = Y;
-            this.speed.X = speedX;
-            this.speed.Y = speedY;
         }
 
         public void Update(GameWindow window)
@@ -27,24 +19,25 @@ namespace SpaceShooter
             KeyboardState keyboardState = Keyboard.GetState();
         
            
-            if(keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
+            if(vector.X <= window.ClientBounds.Width - texture.Width && vector.X >= 0)
+
             {
-                position.X += speed.X;
+                if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
+                    vector.X += speed.X;
+                if (keyboardState.IsKeyDown(Keys.Left) || keyboardState.IsKeyDown(Keys.A))
+                    vector.X -= speed.X;
             }
-            if (keyboardState.IsKeyDown(Keys.Left) || keyboardState.IsKeyDown(Keys.A))
+            if (vector.Y <= window.ClientBounds.Height - texture.Height && vector.Y >= 0)
             {
-                position.X -= speed.X;
-            }
-            if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
-            {
-                position.Y -= speed.Y;
-            }
-            if (keyboardState.IsKeyDown(Keys.Down) || keyboardState.IsKeyDown(Keys.S))
-            {
-                position.Y += speed.Y;
+                if (keyboardState.IsKeyDown(Keys.Down)|| keyboardState.IsKeyDown(Keys.S))
+                    vector.Y += speed.Y;
+                if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
+                    vector.Y -= speed.Y;
             }
 
-            if (vector.X < 0)
+
+
+                if (vector.X < 0)
                 vector.X = 0;
 
             if (vector.X > window.ClientBounds.Width - texture.Width)
@@ -53,15 +46,8 @@ namespace SpaceShooter
             if (vector.Y < 0)
                 vector.Y = 0;
 
-            if (vector.Y > window.ClientBounds.Width - texture.Height)
-                vector.Y = window.ClientBounds.Width - texture.Height;
-        }
-       
-        
-             
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(texture, position, Color.White);
-        }
+            if (vector.Y > window.ClientBounds.Height - texture.Height)
+                vector.Y = window.ClientBounds.Height - texture.Height;
+        }        
     }   
 }

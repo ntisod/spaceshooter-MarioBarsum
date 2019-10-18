@@ -36,7 +36,7 @@ namespace SpaceShooter
         public float Height{ get { return texture.Height; } }
     }
 
-    class MovingObject : GameObject
+    abstract class MovingObject : GameObject
     {
         protected Vector2 speed;
         //    kunstruktor för att skapa objektet

@@ -46,3 +46,14 @@ C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\SharpDX.Di
 C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\obj\x86\Debug\Game1.csproj.CopyComplete
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\myFont.xnb
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\menu\exit.xnb
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\menu\highscore.xnb
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\menu\start.xnb
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\background.xnb
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\bullet.xnb
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\coin.xnb
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\menu.xnb
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\mine.xnb
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\stone.xnb
+C:\GitHub\spaceshooter-MarioBarsum\SpaceShooter\bin\Windows\x86\Debug\Content\Sprites\tripod.xnb
