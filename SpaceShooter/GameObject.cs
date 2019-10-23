@@ -46,4 +46,21 @@ namespace SpaceShooter
             this.speed.Y = speedY;
         }
     }
+
+    abstract class PhysicalObject : MovingObject
+    {
+        protected bool isAlive = true;
+
+        // kunstruktor 
+        public PhysicalObject(Texture2D texture, float X, float Y, float speedX, float speedY)
+            : base(texture, X, Y, speedX, speedY)
+        {
+        }
+        // kollision checkning mellan objekt
+        public bool checkCollision(PhysicalObject other)
+        {
+            Rectangle myRect = new Rectangle(Convert.ToInt32(X);
+        }
+
+    }
 }

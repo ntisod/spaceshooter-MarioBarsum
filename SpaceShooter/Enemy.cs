@@ -12,7 +12,7 @@ namespace SpaceShooter
     {
         bool isAlive = true;
 
-        public Enemy(Texture2D texture, float X, float Y) : base (texture, X, Y, 6f, 0.3f)
+        public Enemy(Texture2D texture, float X, float Y) : base (texture, X, Y, 0f, 0.3f)
         {
         }
     

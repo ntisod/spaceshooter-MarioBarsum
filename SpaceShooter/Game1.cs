@@ -23,7 +23,7 @@ namespace SpaceShooter
         List<Enemy> enemies;
 
         PrintText printText;
-
+        Enemy enemy;
         // mina variabler:
 
         public Game1()
@@ -62,9 +62,10 @@ namespace SpaceShooter
             player = new Player(Content.Load<Texture2D>("Sprites/ship"), 380, 400, 2.5f, 4.5f);
 
             // skapa fiender
+            enemy = new Enemy(Content.Load<Texture2D>("Sprites/mine"), 100.0f, 100.0f);
             enemies = new List<Enemy>();
             Random random = new Random();
-            Texture2D tmpSprite = Content.Load<Texture2D>("sprites/mine");
+            Texture2D tmpSprite = Content.Load<Texture2D>("Sprites/mine");
             for (int i = 0; i < 10; i++)
             {
                 int rndX = random.Next(0, Window.ClientBounds.Width - tmpSprite.Width);
@@ -99,29 +100,7 @@ namespace SpaceShooter
 
             player.Update(Window);
 
-            foreach (Enemy e in enemies)
-                e.Update(Window);
-
-            // tangent 
-
-             
-            /* 
-            //skeppets förflyttning
-            ship_vector.X += ship_speed.X;
-            
-            // förhindra skeppets att åka utanför kanterna 
-            if (ship_vector.X < 0 || ship_vector.X >Window.ClientBounds.Width-ship_texture.Width)
-            {
-                ship_speed.X = ship_speed.X * -1;
-            }
-
-            ship_vector.Y += ship_speed.Y;
-            //förhindra skeppet att åka utanför över - under
-            if (ship_vector.Y < 0 || ship_vector.Y > Window.ClientBounds.Height-ship_texture.Height)
-            {
-                ship_speed.Y = ship_speed.Y * -1;
-            }
-            */
+            enemy.Update(Window);
 
             base.Update(gameTime);
         }
@@ -142,13 +121,17 @@ namespace SpaceShooter
             //player.draw(spriteBatch);
             player.Draw(spriteBatch);
 
-            foreach (Enemy e in enemies.ToList())
+            foreach (Enemy e in enemies)
+                e.Draw(spriteBatch);
+
+            foreach (Enemy e in enemies)
             {
                 if (e.IsAlive)
                     e.Update(Window);
                 else
                     enemies.Remove(e);
             }
+
 
             spriteBatch.End();
 
