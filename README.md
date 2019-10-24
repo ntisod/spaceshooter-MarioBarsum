@@ -9,3 +9,5 @@ Skriv i den här filen hur långt du hunnit i slutet av lektionen. Skriv också 
 
 
 jag har läst om polymorfism och jobbat till sidan 81 och fixat fel som jag hade i koden från tidigare
+
+2019-10-24 Bra! Fortsätt nu med att se till att kollisionerna fungerar.
